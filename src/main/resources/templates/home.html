@@ -1,0 +1,393 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<script src="http://localhost:35729/livereload.js"></script>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spring College - your path to success</title>
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap" rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <!--<link rel="stylesheet" href="assets/css/style-starter.css"> -->
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style-starter.css}"/>
+</head>
+
+<body>
+    <!-- header -->
+    <div th:replace="header :: header"></div>
+    <!-- //header -->
+
+    <!-- banners -->
+    <section id="home" class="w3l-banner py-5">
+        <div class="banner-content">
+            <div class="container py-4">
+                <div class="row align-items-center pt-sm-5 pt-4">
+                    <div class="col-md-6">
+                        <h3 class="mb-lg-4 mb-3">Welcome to Spring College</span>
+                        </h3>
+                        <p class="banner-sub">Informative courses, with the best teachers!</p>
+                        <div class="d-flex align-items-center buttons-banner">
+                            <a th:href="@{/contact}" class="btn btn-style mt-lg-5 mt-4">Register Now</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 right-banner-2 text-end position-relative mt-md-0 mt-5">
+                        <div class="sub-banner-image mx-auto">
+                            <img src="/assets/images/banner.png" alt=" ">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //banners -->
+
+    <!-- features of college -->
+    <section class="services-w3l-block py-5" id="features">
+        <div class="container py-md-5 py-4">
+            <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                <p class="text-uppercase">Main Benefits</p>
+                <h3 class="title-style">Build your future with Spring College</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                    <div class="icon-box icon-box-clr-1">
+                        <div class="icon"><i class="fas fa-user-friends"></i></div>
+                        <h4 class="title"><a>Qualified Teachers</a></h4>
+                        <p>Expert and experienced teachers for each module.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mt-md-0 mt-4">
+                    <div class="icon-box icon-box-clr-2">
+                        <div class="icon"><i class="fas fa-book-reader"></i></div>
+                        <h4 class="title"><a>Quality Syllabus</a></h4>
+                        <p>Best curriculum based on the recent trends!</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mt-lg-0 mt-4">
+                    <div class="icon-box icon-box-clr-3">
+                        <div class="icon"><i class="fas fa-user-graduate"></i></div>
+                        <h4 class="title"><a>Online Support</a></h4>
+                        <p>Online support through various channels available .</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mt-lg-0 mt-4">
+                    <div class="icon-box icon-box-clr-4">
+                        <div class="icon"><i class="fas fa-university"></i></div>
+                        <h4 class="title"><a>Scholarships</a></h4>
+                        <p>Scholarships available for the low income family students.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- features of college -->
+
+    <!-- why us section -->
+    <section class="w3l-service-1 py-5">
+        <div class="container py-md-5 py-4">
+            <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                <p class="text-uppercase">Why Choose Us</p>
+                <h3 class="title-style">Expert Lecturers and Educational Environment</h3>
+            </div>
+            <div class="row content23-col-2 text-center">
+                <div class="col-md-6">
+                    <div class="content23-grid content23-grid1">
+                        <h4><a>Experts</a></h4>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-4">
+                    <div class="content23-grid content23-grid2">
+                        <h4><a>Environment</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- why us section -->
+
+    <!-- statistics -->
+    <section class="w3-stats pt-4 pb-5" id="stats">
+        <div class="container pb-md-5 pb-4">
+            <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                <p class="text-uppercase">Our Statistics</p>
+                <h3 class="title-style">We are Proud to Share with You</h3>
+            </div>
+            <div class="row text-center pt-4">
+                <div class="col-md-3 col-6">
+                    <div class="counter">
+                        <img src="/assets/images/icon-1.png" alt="" class="img-fluid">
+                        <div class="timer count-title count-number mt-sm-1" data-to="1248" data-speed="1500"></div>
+                        <p class="count-text">Current Students</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="counter">
+                        <img src="/assets/images/icon-2.png" alt="" class="img-fluid">
+                        <div class="timer count-title count-number mt-3" data-to="12" data-speed="1500"></div>
+                        <p class="count-text">Our Branches</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mt-md-0 mt-5">
+                    <div class="counter">
+                        <img src="/assets/images/icon-3.png" alt="" class="img-fluid">
+                        <div class="timer count-title count-number mt-3" data-to="128" data-speed="1500"></div>
+                        <p class="count-text">Total Courses</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mt-md-0 mt-5">
+                    <div class="counter">
+                        <img src="/assets/images/icon-4.png" alt="" class="img-fluid">
+                        <div class="timer count-title count-number mt-3" data-to="543" data-speed="1500"></div>
+                        <p class="count-text">Awards Won</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- statistics -->
+
+    <!-- feedbacks section -->
+    <section class="w3l-index4 py-5" id="testimonials">
+        <div class="container py-md-5 py-4">
+            <div class="content-slider text-center">
+                <div class="clients-slider">
+                    <div class="mask">
+                        <ul>
+                            <li class="anim1">
+                                <img src="/assets/images/student1.png" class="img-fluid rounded-circle"
+                                    alt="client image" />
+                                <blockquote class="quote"><q>College infrastructure is perfect, it is located in a very
+                                    good position.
+                                    </q> </blockquote>
+                                <div class="source">- Tomer Hen</div>
+                            </li>
+
+                            <li class="anim2">
+                                <img src="/assets/images/student2.png" class="img-fluid rounded-circle"
+                                    alt="client image" />
+                                <blockquote class="quote"><q>Teachers are very helpful and qualified!
+                                    Exams are fair, and very relevant! It was definitely the right decision,
+                                    to come here.
+                                    </q> </blockquote>
+                                <div class="source">- Roni Rave</div>
+                            </li>
+                            <li class="anim3">
+                                <img src="/assets/images/student3.png" class="img-fluid rounded-circle "
+                                    alt="client image" />
+                                <blockquote class="quote"><q>I'm very happy to be a student in this great College!
+                                    The campus is always clean, and library is huge! I think it provides us overall good value for our money.
+
+                                    </q> </blockquote>
+                                <div class="source">- Danna Bar</div>
+                            </li>
+                            <li class="anim4">
+                                <img src="/assets/images/student4.png" class="img-fluid rounded-circle "
+                                     alt="client image" />
+                                <blockquote class="quote"><q>This college is just awesome!
+                                    They knew exactly how to handle the current pandemic situation, and it's very appreciated.
+
+                                </q> </blockquote>
+                                <div class="source">- Tal Levi</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- feedbacks section -->
+
+    <!-- courses section -->
+    <div class="w3l-grids-block-5 home-course-bg py-5" id="courses">
+        <div class="container py-md-5 py-4">
+            <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                <p class="text-uppercase">Trends Courses</p>
+                <h3 class="title-style">Wide variety of Courses</h3>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="coursecard-single">
+                        <div class="grids5-info position-relative">
+                            <img src="/assets/images/spring.png" alt="" class="img-fluid" />
+                            <div class="meta-list">
+                                <a>MVC</a>
+                            </div>
+                        </div>
+                        <div class="content-main-top">
+                            <div class="content-top mb-4 mt-3">
+                                <ul class="list-unstyled d-flex align-items-center justify-content-between">
+                                    <li> <i class="fas fa-book-open"></i> 32 Lesson</li>
+                                    <li> <i class="fas fa-star"></i> 4.8</li>
+                                </ul>
+                            </div>
+                            <h4><a>Spring MVC</a></h4>
+                            <p>Java framework which is used to build web applications. It follows the Model-View-Controller design pattern</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                    <div class="coursecard-single">
+                        <div class="grids5-info position-relative">
+                            <img src="/assets/images/microservices.png" alt="" class="img-fluid" />
+                            <div class="meta-list">
+                                <a class="sec-2">WEB FRAMEWORK</a>
+                            </div>
+                        </div>
+                        <div class="content-main-top">
+                            <div class="content-top mb-4 mt-3">
+                                <ul class="list-unstyled d-flex align-items-center justify-content-between">
+                                    <li> <i class="fas fa-book-open"></i> 43 Lesson</li>
+                                    <li> <i class="fas fa-star"></i> 4.9</li>
+                                </ul>
+                            </div>
+                            <h4><a>Spring Boot</a></h4>
+                            <p>Microservice-based Java web framework. Creates a fully production-ready environment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+                    <div class="coursecard-single">
+                        <div class="grids5-info position-relative">
+                            <img src="/assets/images/mavenGradle.png" alt="" class="img-fluid" />
+                            <div class="meta-list">
+                                <a class="sec-3">BUILD TOOLS</a>
+                            </div>
+                        </div>
+                        <div class="content-main-top">
+                            <div class="content-top mb-4 mt-3">
+                                <ul class="list-unstyled d-flex align-items-center justify-content-between">
+                                    <li> <i class="fas fa-book-open"></i> 14 Lesson</li>
+                                    <li> <i class="fas fa-star"></i> 5.0</li>
+                                </ul>
+                            </div>
+                            <h4><a>Maven & Gradle</a></h4>
+                            <p> Apache Maven is a software project management and comprehension tool.
+                                Based on the concept of POM,
+                                Maven can manage a project's build, reporting and documentation from a central piece of information.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-sm-5 mt-4 pt-sm-0 pt-1">
+                <a th:href="@{/courses}" class="btn btn-style btn-style-secondary mt-sm-3">
+                    Browse more courses</a>
+            </div>
+        </div>
+    </div>
+    <!-- //courses section -->
+
+    <!-- join us block -->
+    <section class="w3l-call-to-action-6">
+        <div class="container py-md-5 py-sm-4 py-5">
+            <div class="d-lg-flex align-items-center justify-content-between">
+                <div class="left-content-call">
+                    <h3 class="title-big">Your journey starts here</h3>
+                    <p class="text-white mt-1">Join us today!</p>
+                </div>
+                <div class="right-content-call mt-lg-0 mt-4">
+                    <ul class="buttons">
+                        <li><a th:href="@{/contact}" class="btn btn-style btn-style-2 mt-lg-0 mt-3">Register Now</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- join us block -->
+
+    <!-- footer block -->
+    <div th:replace="footer :: footer"></div>
+    <!-- //footer block -->
+
+    <!-- Js scripts -->
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+    </button>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- //move top -->
+
+    <!-- common jquery plugin -->
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <!-- //common jquery plugin -->
+
+    <!-- /counter-->
+    <script src="/assets/js/counter.js"></script>
+    <!-- //counter-->
+
+    <!-- theme switch js (light and dark)-->
+    <script src="/assets/js/theme-change.js"></script>
+    <!-- //theme switch js (light and dark)-->
+
+    <!-- MENU-JS -->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <!-- //MENU-JS -->
+
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
+
+    <!-- bootstrap -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <!-- //bootstrap -->
+    <!-- //Js scripts -->
+</body>
+
+</html>

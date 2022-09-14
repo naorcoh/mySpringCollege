@@ -12,7 +12,7 @@ public class HomeController {
 
 
 
-        return "home.html";
+        return "test.html";
     }
 
 }

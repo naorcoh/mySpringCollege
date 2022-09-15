@@ -16,12 +16,24 @@
 </head>
 
 <body>
+  <!-- header -->
   <div layout:replace="~{fragments/header :: header}"></div>
+  <!-- //header -->
+
+  <!-- page-content -->
   <th:block layout:fragment="content">
     <p>This is filled by the content template.</p>
   </th:block>
+  <!-- //page-content -->
+
+  <!-- footer -->
   <div layout:replace="~{fragments/footer :: footer}"></div>
+  <!-- //footer -->
+
+  <!-- js-scripts -->
   <div layout:replace="~{fragments/scripts :: scripts}"></div>
+  <!-- //js-scripts -->
+
 </body>
 
 </html>

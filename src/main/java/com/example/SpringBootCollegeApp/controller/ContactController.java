@@ -17,7 +17,7 @@ public class ContactController {
     }
 
     @GetMapping("/contact")
-    public String displayContactPage() {
+    public String displayContactPage(Contact contact) {
 
         return "contact.html";
     }

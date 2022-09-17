@@ -35,6 +35,8 @@ public class ContactController {
             log.info("Contact form validation failed : " + errors);
             return "contact.html";
         }
+        contactService.setCounter(contactService.getCounter() + 1);
+        log.info("Number of time contact form was submitted : " + contactService.getCounter());
 
 
         contactService.saveMessageDetails(contact);

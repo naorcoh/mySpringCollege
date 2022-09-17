@@ -1,6 +1,7 @@
 package com.example.SpringBootCollegeApp.sevice;
 
 import com.example.SpringBootCollegeApp.model.Contact;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +12,9 @@ import org.springframework.web.context.annotation.SessionScope;
 @Service
 @Slf4j
 @SessionScope
+@Data
 public class ContactService {
+    private int counter = 0;
 
     /**
      *

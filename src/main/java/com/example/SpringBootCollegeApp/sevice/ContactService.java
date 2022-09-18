@@ -1,6 +1,7 @@
 package com.example.SpringBootCollegeApp.sevice;
 
 import com.example.SpringBootCollegeApp.model.Contact;
+import com.example.SpringBootCollegeApp.model.Registration;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,5 +23,12 @@ public class ContactService {
         return true;
 
         //TODO insert data into database table
+    }
+
+    public boolean saveUserDetails(Registration registration) {
+        log.info(registration.toString());
+        return true;
+
+
     }
 }

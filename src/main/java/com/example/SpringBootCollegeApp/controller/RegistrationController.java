@@ -31,20 +31,19 @@ public class RegistrationController {
         return "registration.html";
     }
 
-    @PostMapping("saveUser")
-    public String saveUser(@Valid @ModelAttribute("registration") Registration registration,
-                           Errors errors,
-                           Model model
-) {
+    @PostMapping("/createUser")
+    public String saveUser(Model model,
+                           @Valid @ModelAttribute("registration") Registration registration,
+                           Errors errors)
+    {
         if (errors.hasErrors()) {
             log.info("registration form validation failed : " + errors);
             return "registration";
         }
+
+       log.info(registration.toString());
         model.addAttribute("success", true);
         model.addAttribute("email", registration.getEmail());
-
-
-       contactService.saveUserDetails(registration);
 
         return "registration.html";
     }

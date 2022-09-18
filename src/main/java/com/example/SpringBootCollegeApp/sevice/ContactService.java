@@ -25,10 +25,4 @@ public class ContactService {
         //TODO insert data into database table
     }
 
-    public boolean saveUserDetails(Registration registration) {
-        log.info(registration.toString());
-        return true;
-
-
-    }
 }

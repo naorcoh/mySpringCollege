@@ -23,8 +23,7 @@ public class SpringCollegeSecurityConfig {
 
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
+        http.csrf().disable().authorizeRequests()
                 .mvcMatchers("/home").authenticated()
                 .mvcMatchers("/contact").permitAll()
                 .mvcMatchers("/saveMsg").permitAll()
@@ -32,8 +31,11 @@ public class SpringCollegeSecurityConfig {
                 .mvcMatchers("/holidays/**").permitAll()
                 .mvcMatchers("/login").permitAll()
                 .mvcMatchers("/dash").authenticated()
-                .and().formLogin().loginPage("/login").defaultSuccessUrl("/dash").failureUrl("login?error=true")
-                .and().logout().logoutSuccessUrl("/login?logout=true")
+                .and()
+                .formLogin()
+                .loginPage("/login").defaultSuccessUrl("/dash").failureUrl("/login?error=true").permitAll()
+                .and()
+                .logout().logoutSuccessUrl("/login?logout=true")
                 .invalidateHttpSession(true).permitAll()
                 .and().httpBasic();
 

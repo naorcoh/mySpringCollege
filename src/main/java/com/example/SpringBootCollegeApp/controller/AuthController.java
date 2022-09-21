@@ -26,13 +26,11 @@ public class AuthController {
             @RequestParam(required = false) String logout,
             Model model)
     {
-        if (error != null) {
+        if (error != null)
             message = "Username or Password is incorrect!";
-        }
 
-        if (logout != null) {
+        if (logout != null)
             message = "You have been successfully logged out!";
-        }
 
         model.addAttribute("message", message);
 

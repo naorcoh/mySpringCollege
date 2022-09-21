@@ -11,7 +11,11 @@ public class DashboardController {
     @GetMapping("/dash")
     public String displayDashboard(Model model, Authentication authentication) {
 
-        return "dash.html";
+        model.addAttribute("username", authentication.getName());
+        model.addAttribute("roles", authentication.getAuthorities().toString());
+
+
+        return "dashboard.html";
 
     }
 }

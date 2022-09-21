@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <th:block layout:fragment="content">
+
+      <!-- inner banner -->
+      <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+          <div class="container pt-4 pb-sm-4">
+            <h4 class="inner-text-title pt-5">Holidays</h4>
+            <ul class="breadcrumbs-custom-path">
+              <li><a th:href="@{/home}">Home</a></li>
+              <li class="active"><i class="fas fa-angle-right"></i>Dashboard</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- //inner banner -->
+
+      <!-- Welcome block -->
+      <section class="w3l-contact py-1" id="contact">
+        <div class="container py-md-1 py-1">
+
+
+          <div class="card border-warning mb-3" style="max-width: 30rem; margin-left: 30%; margin-top: 3%;">
+            <div class="card-header">Welcome</div>
+            <div class="card-body text-warning">
+              <h5 class="title-style" th:text="${username}"></h5>
+              <p class="" th:text="${'You logged in as - ' + roles}"></p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- //Welcome block -->
+    </th:block>
+
+</body>
+</html>

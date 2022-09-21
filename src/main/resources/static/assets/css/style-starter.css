@@ -21272,6 +21272,19 @@ background: linear-gradient(to left, #ffffff 0%, #ffffff 100%);
 .contant_box_404{
     margin-top:-50px;
 }
+
+/* login section */
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to left, #ba7c12 0%, #b64215 100%);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to left, #ffffff 0%, #ffffff 100%);
+}
+/* login section end */
+
+
 /* //error section */
 
 

@@ -21284,8 +21284,20 @@ background: linear-gradient(to left, #ffffff 0%, #ffffff 100%);
 }
 /* login section end */
 
-
 /* //error section */
+.page_404 img{
+    width:100%;
+}
+.four_zero_four_bg{
+    background-image: url(/assets/images/noresult.gif);
+    height: 400px;
+    background-position: center;
+}
+.contant_box_404{
+    margin-top:-50px;
+}
+/* //error section */
+
 
 
 

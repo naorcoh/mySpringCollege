@@ -13,8 +13,8 @@ public class DashboardController {
 
         model.addAttribute("username", authentication.getName());
         model.addAttribute("roles", authentication.getAuthorities().toString());
-        throw new RuntimeException("It's not your day");
-        //return "dashboard.html";
+
+        return "dashboard.html";
 
     }
 }

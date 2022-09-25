@@ -5,7 +5,10 @@ import lombok.Data;
 import javax.validation.constraints.*;
 
 @Data
-public class Contact {
+public class Contact extends BaseEntity {
+
+    private int inquiryId;
+    private String status;
 
     @NotBlank(message = "Name must not be blank!")
     @Size(min = 3, message = "Name must be at least 3 characters long!")

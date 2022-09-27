@@ -1,7 +1,7 @@
 package com.example.SpringBootCollegeApp.controller;
 
 import com.example.SpringBootCollegeApp.model.Contact;
-import com.example.SpringBootCollegeApp.sevice.ContactService;
+import com.example.SpringBootCollegeApp.service.ContactService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;

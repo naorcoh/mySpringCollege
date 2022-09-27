@@ -1,4 +1,4 @@
-package com.example.SpringBootCollegeApp.sevice;
+package com.example.SpringBootCollegeApp.service;
 
 import com.example.SpringBootCollegeApp.model.Contact;
 import com.example.SpringBootCollegeApp.model.enums.EInquiryStatus;

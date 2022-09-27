@@ -1,11 +1,18 @@
 package com.example.SpringBootCollegeApp.repository;
 
+import com.example.SpringBootCollegeApp.mappers.ContactMapper;
 import com.example.SpringBootCollegeApp.model.Contact;
+import com.example.SpringBootCollegeApp.model.enums.EInquiryStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.stereotype.Repository;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
 
 
 @Repository
@@ -34,5 +41,18 @@ public class ContactRepository {
                 contact.getCreatedAt(),
                 contact.getCreatedBy()
         );
+    }
+
+    public List<Contact> findByStatus(EInquiryStatus status) {
+
+        String sqlQuery = "SELECT * FROM Inquiry WHERE status = ?";
+
+        return jdbcTemplate.query(sqlQuery, new PreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement ps) throws SQLException {
+                ps.setString(1, status.toString());
+            }
+        }, new ContactMapper());
+
     }
 }

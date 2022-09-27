@@ -31,6 +31,7 @@ public class SpringCollegeSecurityConfig {
                 .mvcMatchers("/holidays/**").permitAll()
                 .mvcMatchers("/login").permitAll()
                 .mvcMatchers("/dash").authenticated()
+                .mvcMatchers("/displayInquiries").hasRole("ADMIN")
                 .mvcMatchers("/h2-console/**").permitAll()
                 .and()
                 .formLogin()
@@ -60,7 +61,7 @@ public class SpringCollegeSecurityConfig {
                 User.withUsername("admin")
                         .passwordEncoder(passwordEncoder() :: encode)
                         .password("1234")
-                        .roles("ADMIN", "USER")
+                        .roles("ADMIN")
                         .build()
         );
 

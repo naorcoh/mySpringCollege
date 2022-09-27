@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.List;
+
 @Slf4j
 @Controller
 public class ContactController {
@@ -40,5 +42,19 @@ public class ContactController {
         contactService.saveMessageDetails(contact);
         return "redirect:/contact";
     }
+
+    @GetMapping("/displayInquiries")
+    public ModelAndView displayInquiries(Model model) {
+
+        ModelAndView modelAndView = new ModelAndView();
+        List<Contact> inquiriesList = contactService.findInquiresByStatus();
+        modelAndView.setViewName("inquiries");
+        modelAndView.addObject("inquiriesList", inquiriesList);
+
+
+        return modelAndView;
+    }
+
+
 
 }

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @Slf4j
@@ -26,14 +27,19 @@ public class ContactService {
     public boolean saveMessageDetails(Contact contact) {
 
         log.info(contact.toString());
-
         contact.setCreatedAt(LocalDateTime.now());
         contact.setCreatedBy(EUserRoles.ANONYMOUS.toString());
         contact.setStatus(EInquiryStatus.OPEN.toString());
-
         int queryResults = contactRepository.saveInquiry(contact);
+
         return (queryResults > 0);
-
-
     }
+
+    public List<Contact> findInquiresByStatus() {
+
+        List<Contact> inquiresList = contactRepository.findByStatus(EInquiryStatus.OPEN);
+
+        return inquiresList;
+    }
+
 }

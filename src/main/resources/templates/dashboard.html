@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout}">
+      layout:decorate="~{layout}" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -21,6 +21,16 @@
         </div>
       </section>
       <!-- //inner banner -->
+
+      <div class="container py-md-5 py-4">
+        <div class="section__content section__content--p30">
+          <div class="container-fluid">
+            <div class="row m-t-25">
+              <div class="col-sm-6 col-lg-3" sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/displayInquiries}" class="btn btn-primary" style="background-color: #b64215; width: 33%;" role="button"><i class="fa fa-envelope"></i></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Welcome block -->
       <section class="w3l-contact py-1" id="contact">

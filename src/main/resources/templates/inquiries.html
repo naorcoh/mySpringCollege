@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <th:block layout:fragment="content">
+
+      <!-- inner banner -->
+      <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+          <div class="container pt-4 pb-sm-4">
+            <h4 class="inner-text-title pt-5">Inquiries</h4>
+            <ul class="breadcrumbs-custom-path">
+              <li><a th:href="@{/home}">Home</a></li>
+              <li class="active"><i class="fas fa-angle-right"></i>Inquiries</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- //inner banner -->
+
+      <div class="site-section">
+
+        <div class="table-responsive-md">
+          <div class="row mb-4">
+            <div class="col-md-7">
+              <h3 class="heading-21921" style="margin-left: 12%; margin-top: 7%;">Open Inquiries</h3>
+            </div>
+          </div>
+          <table class="table table-striped table-hover table-bordered" style="width: 85%; margin-left:7%;">
+            <thead class="table-dark">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Mobile Num</th>
+              <th scope="col">Email</th>
+              <th scope="col">Subject</th>
+              <th scope="col">Message</th>
+              <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="inquiry: ${inquiriesList}">
+              <td th:text="${inquiry.name}"></td>
+              <td th:text="${inquiry.mobileNum}"></td>
+              <td th:text="${inquiry.email}"></td>
+              <td th:text="${inquiry.subject}"></td>
+              <td th:text="${inquiry.message}"></td>
+              <td><a th:href="@{/closeInquiry(id=${inquiry.inquiryId})}" class="btn btn-style btn-style-3">CLOSE</a></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-2 login-center text-start">
+          <a th:href="@{/dash}">
+            <button class="btn btn-style btn-style-3 text-left" style="margin-left: 37%; margin-top: 13%; margin-bottom: 10%;">BACK</button>
+          </a>
+        </div>
+      </div>
+    </th:block>
+
+</body>
+</html>

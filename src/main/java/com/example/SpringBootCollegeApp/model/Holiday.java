@@ -3,7 +3,7 @@ package com.example.SpringBootCollegeApp.model;
 import lombok.Data;
 
 @Data
-public class Holiday {
+public class Holiday extends BaseEntity {
 
     private final String day;
     private final String reason;

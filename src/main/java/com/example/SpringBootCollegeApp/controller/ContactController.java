@@ -4,6 +4,7 @@ import com.example.SpringBootCollegeApp.model.Contact;
 import com.example.SpringBootCollegeApp.sevice.ContactService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -53,6 +54,14 @@ public class ContactController {
 
 
         return modelAndView;
+    }
+
+    @GetMapping("/closeInquiry")
+    public String closeInquiry(@RequestParam int id, Authentication authentication) {
+
+        contactService.updateInquiryStatus(id, authentication.getName());
+
+        return "redirect:/displayInquiries";
     }
 
 

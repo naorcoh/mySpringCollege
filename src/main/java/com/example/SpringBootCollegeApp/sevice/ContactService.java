@@ -42,4 +42,11 @@ public class ContactService {
         return inquiresList;
     }
 
+    public boolean updateInquiryStatus(int inquiryId, String updateBy) {
+
+        int queryResults = contactRepository.updateInquiryStatus(inquiryId, EInquiryStatus.CLOSED, updateBy);
+
+        return (queryResults > 0);
+    }
+
 }

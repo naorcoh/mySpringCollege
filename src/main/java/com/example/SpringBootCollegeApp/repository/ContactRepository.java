@@ -12,6 +12,8 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -54,5 +56,23 @@ public class ContactRepository {
             }
         }, new ContactMapper());
 
+    }
+
+    public int updateInquiryStatus(int inquiryId, EInquiryStatus status, String updateBy) {
+
+        String sqlQuery = "UPDATE inquiry SET status = ?, updated_by = ?, updated_at = ? WHERE inquiry_id = ?";
+
+        PreparedStatementSetter pss = new PreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement ps) throws SQLException {
+                ps.setString(1, status.toString());
+                ps.setString(2, updateBy);
+                ps.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+                ps.setInt(4, inquiryId);
+
+            }
+        };
+
+        return jdbcTemplate.update(sqlQuery,pss);
     }
 }

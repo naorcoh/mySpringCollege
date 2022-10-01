@@ -23,7 +23,7 @@ public class SpringCollegeSecurityConfig {
 
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().ignoringAntMatchers("/saveMsg", "/h2-console/**").and().authorizeRequests()
+        http.csrf().ignoringAntMatchers("/saveMsg").and().authorizeRequests()
                 .mvcMatchers("/home").authenticated()
                 .mvcMatchers("/contact").permitAll()
                 .mvcMatchers("/saveMsg").permitAll()
@@ -32,7 +32,6 @@ public class SpringCollegeSecurityConfig {
                 .mvcMatchers("/login").permitAll()
                 .mvcMatchers("/dash").authenticated()
                 .mvcMatchers("/displayInquiries").hasRole("ADMIN")
-                .mvcMatchers("/h2-console/**").permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/login").defaultSuccessUrl("/dash").failureUrl("/login?error=true").permitAll()
@@ -41,7 +40,7 @@ public class SpringCollegeSecurityConfig {
                 .invalidateHttpSession(true).permitAll()
                 .and().httpBasic();
 
-        http.headers().frameOptions().disable();
+
 
         return http.build();
     }

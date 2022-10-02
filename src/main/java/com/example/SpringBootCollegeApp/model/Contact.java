@@ -1,12 +1,19 @@
 package com.example.SpringBootCollegeApp.model;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Data
+@Entity
+@Table(name = "inquiry")
 public class Contact extends BaseEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int inquiryId;
     private String status;
 

@@ -1,3 +1,5 @@
+CREATE DATABASE springcollege
+USE springcollege
 CREATE TABLE IF NOT EXISTS `inquiry` (
   `inquiry_id` int AUTO_INCREMENT  PRIMARY KEY,
   `name` varchar(100) NOT NULL,

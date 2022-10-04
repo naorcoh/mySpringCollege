@@ -58,7 +58,7 @@ public class ContactRepository {
 
     }
 
-    public int updateInquiryStatus(int inquiryId, EInquiryStatus status, String updateBy) {
+    public int updateInquiryStatus(int inquiryId, EInquiryStatus status, String updatedBy) {
 
         String sqlQuery = "UPDATE inquiry SET status = ?, updated_by = ?, updated_at = ? WHERE inquiry_id = ?";
 
@@ -66,7 +66,7 @@ public class ContactRepository {
             @Override
             public void setValues(PreparedStatement ps) throws SQLException {
                 ps.setString(1, status.toString());
-                ps.setString(2, updateBy);
+                ps.setString(2, updatedBy);
                 ps.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
                 ps.setInt(4, inquiryId);
 

@@ -3,6 +3,8 @@ package com.example.SpringBootCollegeApp.controller;
 import com.example.SpringBootCollegeApp.model.Holiday;
 import com.example.SpringBootCollegeApp.repository.HolidayRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.IterableUtils;
+import org.apache.commons.collections4.IteratorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,8 +41,8 @@ public class HolidayController {
 
         }
 
+        List<Holiday> holidays = IterableUtils.toList(holidayRepository.findAll());
 
-        List<Holiday> holidays = holidayRepository.findAllHoliday();
 
 
         for (Holiday.Type type: Holiday.Type.values()) {

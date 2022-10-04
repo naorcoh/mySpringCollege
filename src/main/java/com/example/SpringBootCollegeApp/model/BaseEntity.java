@@ -1,7 +1,5 @@
 package com.example.SpringBootCollegeApp.model;
-
 import lombok.Data;
-
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
@@ -9,9 +7,9 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public class BaseEntity {
 
-    private String updateBy;
     private String createdBy;
-    private LocalDateTime updateAt;
+    private String updatedBy;
     private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
 }

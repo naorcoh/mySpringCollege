@@ -23,10 +23,10 @@ public class ContactMapper implements RowMapper<Contact> {
         contact.setCreatedBy(rs.getString("created_by"));
 
         if (rs.getTimestamp("updated_at") != null)
-            contact.setUpdateAt(rs.getTimestamp("updated_at").toLocalDateTime());
+            contact.setUpdatedAt(rs.getTimestamp("updated_at").toLocalDateTime());
 
         if (rs.getString("updated_by") != null)
-            contact.setUpdateBy(rs.getString("updated_by"));
+            contact.setUpdatedBy(rs.getString("updated_by"));
 
 
         return contact;

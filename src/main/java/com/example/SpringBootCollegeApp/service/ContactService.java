@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -30,23 +31,31 @@ public class ContactService {
         contact.setCreatedAt(LocalDateTime.now());
         contact.setCreatedBy(EUserRoles.ANONYMOUS.toString());
         contact.setStatus(EInquiryStatus.OPEN.toString());
-        int queryResults = contactRepository.saveInquiry(contact);
 
-        return (queryResults > 0);
+        Contact queryResults = contactRepository.save(contact);
+
+        return (queryResults != null && queryResults.getInquiryId() > 0);
     }
 
     public List<Contact> findInquiresByStatus() {
 
-        List<Contact> inquiresList = contactRepository.findByStatus(EInquiryStatus.OPEN);
-
+        List<Contact> inquiresList = contactRepository.findByStatus(EInquiryStatus.OPEN.toString());
         return inquiresList;
     }
 
-    public boolean updateInquiryStatus(int inquiryId, String updateBy) {
+    public boolean updateInquiryStatus(int inquiryId, String updatedBy) {
 
-        int queryResults = contactRepository.updateInquiryStatus(inquiryId, EInquiryStatus.CLOSED, updateBy);
+        Optional<Contact> contact = contactRepository.findById(inquiryId);
 
-        return (queryResults > 0);
+        contact.ifPresent(contactObj -> {
+            contactObj.setStatus(EInquiryStatus.CLOSED.toString());
+            contactObj.setUpdatedBy(updatedBy);
+            contactObj.setUpdatedAt(LocalDateTime.now());
+        });
+
+         Contact queryResults = contactRepository.save(contact.get());
+
+        return (queryResults != null && queryResults.getUpdatedBy() != null);
     }
 
 }

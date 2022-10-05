@@ -57,9 +57,9 @@ public class ContactController {
     }
 
     @GetMapping("/closeInquiry")
-    public String closeInquiry(@RequestParam int id, Authentication authentication) {
+    public String closeInquiry(@RequestParam int id) {
 
-        contactService.updateInquiryStatus(id, authentication.getName());
+        contactService.updateInquiryStatus(id);
 
         return "redirect:/displayInquiries";
     }

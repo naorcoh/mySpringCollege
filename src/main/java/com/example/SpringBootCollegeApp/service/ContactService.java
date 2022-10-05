@@ -27,9 +27,9 @@ public class ContactService {
 
     public boolean saveMessageDetails(Contact contact) {
 
-        log.info(contact.toString());
-        contact.setCreatedAt(LocalDateTime.now());
-        contact.setCreatedBy(EUserRoles.ANONYMOUS.toString());
+//        log.info(contact.toString());
+//        contact.setCreatedAt(LocalDateTime.now());
+//        contact.setCreatedBy(EUserRoles.ANONYMOUS.toString());
         contact.setStatus(EInquiryStatus.OPEN.toString());
 
         Contact queryResults = contactRepository.save(contact);
@@ -43,14 +43,14 @@ public class ContactService {
         return inquiresList;
     }
 
-    public boolean updateInquiryStatus(int inquiryId, String updatedBy) {
+    public boolean updateInquiryStatus(int inquiryId) {
 
         Optional<Contact> contact = contactRepository.findById(inquiryId);
 
         contact.ifPresent(contactObj -> {
             contactObj.setStatus(EInquiryStatus.CLOSED.toString());
-            contactObj.setUpdatedBy(updatedBy);
-            contactObj.setUpdatedAt(LocalDateTime.now());
+//            contactObj.setUpdatedBy(updatedBy);
+//            contactObj.setUpdatedAt(LocalDateTime.now());
         });
 
          Contact queryResults = contactRepository.save(contact.get());

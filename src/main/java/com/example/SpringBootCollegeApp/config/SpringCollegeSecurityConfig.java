@@ -31,6 +31,7 @@ public class SpringCollegeSecurityConfig {
                 .mvcMatchers("/holidays/**").permitAll()
                 .mvcMatchers("/login").permitAll()
                 .mvcMatchers("/dash").authenticated()
+                .mvcMatchers("/register").permitAll()
                 .mvcMatchers("/displayInquiries").hasRole("ADMIN")
                 .and()
                 .formLogin()

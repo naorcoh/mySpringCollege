@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <th:block layout:fragment="content">
+      <!-- inner banner -->
+      <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+          <div class="container pt-4 pb-sm-4">
+            <h4 class="inner-text-title pt-5">LogIn</h4>
+            <ul class="breadcrumbs-custom-path">
+              <li><a th:href="@{/home}">Home</a></li>
+              <li class="active"><i class="fas fa-angle-right"></i>LogIn</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- //inner banner -->
+
+
+
+      <!-- //login block -->
+
+      <section class="vh-200 gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+
+                  <ul>
+                    <li class="alert alert-danger" role="alert" th:each="error : ${#fields.errors('user.*')}" th:text="${error}" />
+                  </ul>
+
+                  <form th:action="@{/createUser}" method="post" class="signin-form" th:object="${user}">
+
+                    <div class="mb-md-5 mt-md-4 pb-5">
+
+                      <h2 class="fw-bold mb-2 text-uppercase" style="color: #ffffff">Register</h2>
+                      <p class="text-white-50 mb-5">Please enter your details for registration!</p>
+
+                      <div class="form-outline form-white mb-4">
+                        <input type="text" th:field="*{name}" placeholder="Name" class="form-control form-control-lg" />
+                      </div>
+
+                      <div class="form-outline form-white mb-4">
+                        <input type="text" th:field="*{mobileNumber}" placeholder="Mobile Number" class="form-control form-control-lg" />
+                      </div>
+
+                      <div class="form-outline form-white mb-4">
+                        <input type="text" th:field="*{email}" placeholder="Email" class="form-control form-control-lg" />
+                      </div>
+
+                      <div class="form-outline form-white mb-4">
+                        <input type="text" th:field="*{confirmEmail}" placeholder="Confirm Email" class="form-control form-control-lg" />
+                      </div>
+
+                      <div class="form-outline form-white mb-4">
+                        <input type="password" th:field="*{pwd}" placeholder="Password" class="form-control form-control-lg" />
+                      </div>
+
+                      <div class="form-outline form-white mb-4">
+                        <input type="password" th:field="*{confirmPwd}" placeholder="Confirm Password" class="form-control form-control-lg" />
+                      </div>
+
+                      <button class="btn btn-outline-light btn-lg px-5 btn-style" type="submit" style="margin-top: 13%;">Register</button>
+
+                    </div>
+
+                  </form>
+
+                  <div>
+                    <p class="mb-0" style="color: #ffffff">Your Journey starts here. </p>
+                    <p><a class="text-white-50 fw-bold"> Spring College</a></p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- //login block -->
+
+    </th:block>
+
+</body>
+</html>

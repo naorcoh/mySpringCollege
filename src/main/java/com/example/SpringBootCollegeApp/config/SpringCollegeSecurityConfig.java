@@ -41,8 +41,6 @@ public class SpringCollegeSecurityConfig {
                 .invalidateHttpSession(true).permitAll()
                 .and().httpBasic();
 
-
-
         return http.build();
     }
 

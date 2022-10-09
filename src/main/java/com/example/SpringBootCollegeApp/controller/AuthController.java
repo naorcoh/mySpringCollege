@@ -24,13 +24,18 @@ public class AuthController {
     public String displayLoginPage(
             @RequestParam(required = false) String error,
             @RequestParam(required = false) String logout,
+            @RequestParam(required = false) String register,
             Model model)
     {
         if (error != null)
             message = "Username or Password is incorrect!";
 
-        if (logout != null)
+        else if (logout != null)
             message = "You have been successfully logged out!";
+
+        else if (register != null)
+            message = "Registration process was done successfully!";
+
 
         model.addAttribute("message", message);
 

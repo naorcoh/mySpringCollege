@@ -25,15 +25,15 @@ public class RegistrationController {
         return "registration.html";
     }
 
-//
-//    @PostMapping("/createUser")
-//    public String createUser(@Valid @ModelAttribute("user") User user, Errors errors) {
-//
-//        if (errors.hasErrors())
-//            return "registration.html";
-//
-//        return userService.createNewUser(user) ? "redirect:/login?register=true" : "registration.html";
-//    }
+
+    @PostMapping("/createUser")
+    public String createUser(@Valid @ModelAttribute("user") User user, Errors errors) {
+
+        if (errors.hasErrors())
+            return "registration.html";
+
+        return "redirect:/login?register=true";
+    }
 
 
 }

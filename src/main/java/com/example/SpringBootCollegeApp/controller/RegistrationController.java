@@ -32,7 +32,9 @@ public class RegistrationController {
         if (errors.hasErrors())
             return "registration.html";
 
-        return "redirect:/login?register=true";
+
+
+        return userService.createNewUser(user) ? "redirect:/login?register=true": "registration.html";
     }
 
 

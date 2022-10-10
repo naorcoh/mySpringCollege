@@ -33,7 +33,7 @@ public class SpringCollegeAuthenticationProvider implements AuthenticationProvid
 
         User user = userRepository.readByEmail(email);
 
-        if (user != null && user.getUserId() > 0 && pwd.equals(user.getPwd()))
+        if (user != null && user.getUserId() > 0 && passwordEncoder.matches(pwd, user.getPwd()))
             return new UsernamePasswordAuthenticationToken(user.getName(), pwd, getGrantedAuth(user.getRoles()));
         return null;
     }

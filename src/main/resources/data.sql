@@ -30,3 +30,6 @@ INSERT INTO `roles` (`role_name`,`created_at`, `created_by`)
 
 INSERT INTO `roles` (`role_name`,`created_at`, `created_by`)
   VALUES ('USER',CURDATE(),'DBA');
+
+INSERT INTO `user` (`name`,`email`,`mobile_number`,`pwd`,`role_id`,`created_at`, `created_by`)
+  VALUES ('Admin','admin@springcollege.com','0523898724','1234', 1 ,CURDATE(),'DBA');

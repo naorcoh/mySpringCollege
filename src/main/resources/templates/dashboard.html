@@ -26,7 +26,18 @@
         <div class="section__content section__content--p30">
           <div class="container-fluid">
             <div class="row m-t-25">
-              <div class="col-sm-6 col-lg-3" sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/displayInquiries}" class="btn btn-primary" style="background-color: #b64215; width: 33%;" role="button"><i class="fa fa-envelope"></i></a></div>
+              <div class="col-sm-6 col-lg-3">
+                <a th:href="@{/displayProfile}" class="btn btn-primary" style="background-color: #b64215; width: 43%;" role="button">
+                  <i class="fa fa-user">
+                    <span style="font-family:'Ubuntu';"> Profile</span>
+                  </i>
+                </a>
+                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/displayInquiries}" class="btn btn-primary" style="background-color: #b64215; width: 43%;" role="button">
+                  <i class="fa fa-envelope">
+                    <span style="font-family:'Ubuntu';"> Messages</span>
+                  </i>
+                </a>
+              </div>
             </div>
           </div>
         </div>

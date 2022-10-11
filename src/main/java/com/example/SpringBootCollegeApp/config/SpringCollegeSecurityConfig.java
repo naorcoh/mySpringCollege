@@ -28,6 +28,8 @@ public class SpringCollegeSecurityConfig {
                 .mvcMatchers("/contact").permitAll()
                 .mvcMatchers("/saveMsg").permitAll()
                 .mvcMatchers("/courses").permitAll()
+                .mvcMatchers("/displayProfile").authenticated()
+                .mvcMatchers("/updateProfile").authenticated()
                 .mvcMatchers("/holidays/**").permitAll()
                 .mvcMatchers("/login").permitAll()
                 .mvcMatchers("/dash").authenticated()

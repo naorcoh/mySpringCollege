@@ -36,6 +36,5 @@ public class UserProfile {
     private String state;
 
     @NotBlank(message = "Zip code must not be blank")
-    @Pattern(regexp = "[0-9]{10}", message = "Zip code must contain digits only!")
-    private int zipCode;
+    private String zipCode;
 }

@@ -3,9 +3,10 @@ package com.example.SpringBootCollegeApp.rest;
 import com.example.SpringBootCollegeApp.model.Contact;
 import com.example.SpringBootCollegeApp.repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import javax.validation.Valid;
 import java.util.Collections;
 import java.util.List;
 
@@ -26,5 +27,15 @@ public class ContactRestController {
             return contactRepository.findBySubjectContaining(contact.getSubject());
         else
             return Collections.emptyList();
+    }
+
+    @PostMapping("/saveInquiry")
+    public ResponseEntity<Contact> saveInquiry(@Valid @RequestBody Contact contact) {
+
+        Contact queryResponse = contactRepository.save(contact);
+
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .header("isInquirySaved", "true")
+                .body(queryResponse);
     }
 }

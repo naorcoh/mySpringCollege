@@ -10,5 +10,6 @@ import java.util.List;
 @Repository
 public interface ContactRepository extends CrudRepository<Contact, Integer> {
     List<Contact> findByStatus(String status);
+    List<Contact> findBySubjectContaining(String subjectContaining);
 
 }

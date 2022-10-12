@@ -23,11 +23,12 @@ public class SpringCollegeSecurityConfig {
 
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().ignoringAntMatchers("/saveMsg").and().authorizeRequests()
+        http.csrf().ignoringAntMatchers("/saveMsg", "/api/**").and().authorizeRequests()
                 .mvcMatchers("/home").authenticated()
                 .mvcMatchers("/contact").permitAll()
                 .mvcMatchers("/saveMsg").permitAll()
                 .mvcMatchers("/courses").permitAll()
+                .mvcMatchers("/api/**").authenticated()
                 .mvcMatchers("/displayProfile").authenticated()
                 .mvcMatchers("/updateProfile").authenticated()
                 .mvcMatchers("/holidays/**").permitAll()

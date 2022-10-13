@@ -25,7 +25,7 @@ public class BaseEntity {
 
     @CreatedDate
     @Column(updatable = false)
-    @JsonProperty("created_at")
+    @JsonProperty("created_at1")
     private LocalDateTime createdAt;
 
     @LastModifiedBy

@@ -3,6 +3,7 @@ package com.example.SpringBootCollegeApp.rest;
 import com.example.SpringBootCollegeApp.model.Contact;
 import com.example.SpringBootCollegeApp.model.CustomHttpRequest;
 import com.example.SpringBootCollegeApp.repository.ContactRepository;
+import net.bytebuddy.asm.Advice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.RequestEntity;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/inquiries")
+@CrossOrigin(origins = "*")
 public class ContactRestController {
     @Autowired
     private ContactRepository contactRepository;

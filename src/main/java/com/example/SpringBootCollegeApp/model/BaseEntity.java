@@ -1,4 +1,6 @@
 package com.example.SpringBootCollegeApp.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -18,10 +20,12 @@ public class BaseEntity {
 
     @CreatedBy
     @Column(updatable = false)
+    @JsonIgnore
     private String createdBy;
 
     @CreatedDate
     @Column(updatable = false)
+    @JsonProperty("created_at")
     private LocalDateTime createdAt;
 
     @LastModifiedBy

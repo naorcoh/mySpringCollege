@@ -25,15 +25,17 @@ public class BaseEntity {
 
     @CreatedDate
     @Column(updatable = false)
-    @JsonProperty("created_at1")
+    @JsonIgnore
     private LocalDateTime createdAt;
 
     @LastModifiedBy
     @Column(insertable = false)
+    @JsonIgnore
     private String updatedBy;
 
     @LastModifiedDate
     @Column(insertable = false)
+    @JsonIgnore
     private LocalDateTime updatedAt;
 
 }

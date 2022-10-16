@@ -1,9 +1,8 @@
 package com.example.SpringBootCollegeApp.rest;
 
 import com.example.SpringBootCollegeApp.model.Contact;
-import com.example.SpringBootCollegeApp.model.CustomHttpRequest;
+import com.example.SpringBootCollegeApp.model.CustomHttpResponse;
 import com.example.SpringBootCollegeApp.repository.ContactRepository;
-import net.bytebuddy.asm.Advice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.RequestEntity;
@@ -44,14 +43,14 @@ public class ContactRestController {
     }
 
     @DeleteMapping("/deleteInquiry")
-    public ResponseEntity<CustomHttpRequest> deleteInquiry(RequestEntity<Contact> requestEntity) {
+    public ResponseEntity<CustomHttpResponse> deleteInquiry(RequestEntity<Contact> requestEntity) {
 
         Contact contact = requestEntity.getBody();
         contactRepository.deleteById(contact.getInquiryId());
 
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(new CustomHttpRequest(200, "Inquiry was deleted successfully"));
+                .body(new CustomHttpResponse(200, "Inquiry was deleted successfully"));
     }
 
 

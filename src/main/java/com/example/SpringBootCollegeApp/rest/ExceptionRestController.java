@@ -1,6 +1,6 @@
 package com.example.SpringBootCollegeApp.rest;
 
-import com.example.SpringBootCollegeApp.model.CustomHttpRequest;
+import com.example.SpringBootCollegeApp.model.CustomHttpResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ExceptionRestController {
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<CustomHttpRequest> exceptionHandler(Exception e) {
+    public ResponseEntity<CustomHttpResponse> exceptionHandler(Exception e) {
 
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(new CustomHttpRequest(500, e.getMessage()));
+                .body(new CustomHttpResponse(500, e.getMessage()));
     }
 
 
